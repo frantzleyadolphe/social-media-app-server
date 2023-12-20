@@ -7,6 +7,7 @@ import morgan from "morgan";
 import multer from "multer";
 import bodyParser from "body-parser";
 import path from "path";
+import authRoutes from "./controllers/auth";
 import { fileURLToPath } from "url";
 
 /* CONFIGURATIONS */
