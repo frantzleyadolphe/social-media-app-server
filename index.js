@@ -37,6 +37,10 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
+/* ROUTES IMPORTING WITH FILES*/
+
+app.post("auth/register", upload.single("picture"), register);
+
 /* MONGOOSE SETUP */
 
 const PORT = process.env.PORT || 6001;
@@ -51,5 +55,3 @@ mongoose
     });
   })
   .catch((error) => console.log(`${error} did not connect`));
-
-/* ROUTES IMPORTING */
