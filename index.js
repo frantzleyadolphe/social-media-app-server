@@ -9,6 +9,7 @@ import bodyParser from "body-parser";
 import path from "path";
 import authRoutes from "./routes/auth";
 import { register } from "./controllers/auth";
+import userRoutes from "./routes/users.js";
 import { fileURLToPath } from "url";
 
 /* CONFIGURATIONS */
@@ -46,6 +47,7 @@ app.post("/auth/register", upload.single("picture"), register);
 /* ROUTES */
 
 app.use("/auth", authRoutes);
+app.use("/users", userRoutes);
 
 /* MONGOOSE SETUP */
 
