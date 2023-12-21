@@ -7,7 +7,8 @@ import morgan from "morgan";
 import multer from "multer";
 import bodyParser from "body-parser";
 import path from "path";
-import authRoutes from "./controllers/auth";
+import authRoutes from "./routes/auth";
+import { register } from "./controllers/auth";
 import { fileURLToPath } from "url";
 
 /* CONFIGURATIONS */
@@ -40,7 +41,7 @@ const upload = multer({ storage });
 
 /* ROUTES IMPORTING WITH FILES*/
 
-app.post("auth/register", upload.single("picture"), register);
+app.post("/auth/register", upload.single("picture"), register);
 
 /* ROUTES */
 
