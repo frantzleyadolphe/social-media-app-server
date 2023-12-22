@@ -12,6 +12,9 @@ import { register } from "./controllers/auth.js";
 import userRoutes from "./routes/users.js";
 import postRoutes from "./routes/posts.js";
 import { fileURLToPath } from "url";
+import User from "./models/User.js";
+import Post from "./models/Post.js";
+import { users, posts } from "./data/index.js";
 
 /* CONFIGURATIONS */
 
@@ -62,6 +65,11 @@ mongoose
   .then(() => {
     app.listen(PORT, () => {
       console.log(`Server Port: ${PORT}`);
+
+      /* ADD FAKE DATA TO DATABASE */
+
+      // User.insertMany(users);
+      // Post.insertMany(posts);
     });
   })
   .catch((error) => console.log(`${error} did not connect`));
